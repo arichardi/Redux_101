@@ -1,5 +1,5 @@
 {
-  "name": "Redux_101",
+  "name": "redux_101",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,6 +7,6 @@
     "redux": "^4.0.5"
   },
   "scripts": {
-    "run": "node index.js"
+    "start": "node index.js"
   }
 }
