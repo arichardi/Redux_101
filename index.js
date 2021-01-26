@@ -8,6 +8,7 @@ const createStore = redux.createStore
 The highcase is a convention
 this save the action that will occour */
 const BUY_CAKE = 'BUY_CAKE'
+const MAKE_CAKE = 'MAKE_CAKE'
 
 /*action of a system
 function that execute someting in the store
@@ -16,7 +17,14 @@ always objects */
 function buyCake(){
     return{
         type: BUY_CAKE,
-        info: "first redux action"
+        info: "consume a cake of the store"
+    }
+}
+
+function makeCake(){
+    return {
+        type: MAKE_CAKE,
+        info: 'insert a new cake in the store'
     }
 }
 
@@ -36,6 +44,9 @@ const reducer = (state = initialState, action) => {
         case BUY_CAKE: return {
             ...state, numOfCakes: state.numOfCakes - 1
         }
+        case MAKE_CAKE: return {
+            ...state, numOfCakes: state.numOfCakes + 1
+        }
         default: return state
     }
 }
@@ -53,5 +64,7 @@ const unsubscribe = store.subscribe( () => console.log('Update State', store.get
 store.dispatch(buyCake())
 store.dispatch(buyCake())
 store.dispatch(buyCake())
+store.dispatch(makeCake())
+
 
 unsubscribe();
